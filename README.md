@@ -1,8 +1,8 @@
 # BetaFace API Algorithmic Fairness Audit
 
 [![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white)](https://www.tableau.com/)
-[![Data Analysis](https://img.shields.io/badge/Data-Analysis-blue)](https://github.com/yourusername/betaface-fairness-audit)
-[![Algorithmic Fairness](https://img.shields.io/badge/Algorithmic-Fairness-green)](https://github.com/yourusername/betaface-fairness-audit)
+[![Data Analysis](https://img.shields.io/badge/Data-Analysis-blue)](https://github.com/Mkpz/facial-recognition-bias-audit)
+[![Algorithmic Fairness](https://img.shields.io/badge/Algorithmic-Fairness-green)](https://github.com/Mkpz/facial-recognition-bias-audit)
 
 An algorithmic fairness audit of the BetaFace facial recognition API, revealing significant demographic biases in gender, race, and age detection across diverse image datasets.
 
@@ -58,7 +58,7 @@ Disparity Ratio = (Best Group Accuracy) / (Worst Group Accuracy)
 ## 📁 Repository Structure
 
 ```
-betaface-fairness-audit/
+facial-recognition-bias-audit/
 │
 ├── BetaFace_API_Auditing_Report.pdf   # Comprehensive audit report
 ├── README.md                          # Project documentation
@@ -153,8 +153,8 @@ betaface-fairness-audit/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/betaface-fairness-audit.git
-cd betaface-fairness-audit
+git clone https://github.com/Mkpz/facial-recognition-bias-audit.git
+cd facial-recognition-bias-audit
 ```
 
 2. Install dependencies:
@@ -232,7 +232,7 @@ Rutgers University Algorithmic Fairness Project.
 ## 📧 Contact
 
 **Mahek Patel**  
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@Mkpz](https://github.com/Mkpz)
 - LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
 - Email: your.email@example.com
 
