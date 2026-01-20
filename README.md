@@ -1,251 +1,340 @@
-# BetaFace API Algorithmic Fairness Audit
+# Music & Mental Health: Analyzing the Relationship Between Music Listening Habits and OCD Levels
 
-[![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white)](https://www.tableau.com/)
-[![Data Analysis](https://img.shields.io/badge/Data-Analysis-blue)](https://github.com/Mkpz/facial-recognition-bias-audit)
-[![Algorithmic Fairness](https://img.shields.io/badge/Algorithmic-Fairness-green)](https://github.com/Mkpz/facial-recognition-bias-audit)
+[![R](https://img.shields.io/badge/R-276DC3?style=flat&logo=r&logoColor=white)](https://www.r-project.org/)
+[![Statistical Analysis](https://img.shields.io/badge/Statistical-Analysis-blue)](https://github.com/Mkpz/OCD-Levels-Music-Preference-Pattern-Prediction)
+[![Hypothesis Testing](https://img.shields.io/badge/Hypothesis-Testing-orange)](https://github.com/Mkpz/OCD-Levels-Music-Preference-Pattern-Prediction)
+[![Regression Modeling](https://img.shields.io/badge/Regression-Modeling-green)](https://github.com/Mkpz/OCD-Levels-Music-Preference-Pattern-Prediction)
+[![Data Visualization](https://img.shields.io/badge/Data-Visualization-purple)](https://github.com/Mkpz/OCD-Levels-Music-Preference-Pattern-Prediction)
+[![Bonferroni Correction](https://img.shields.io/badge/Bonferroni-Correction-red)](https://github.com/Mkpz/OCD-Levels-Music-Preference-Pattern-Prediction)
+[![Medium](https://img.shields.io/badge/Medium-Read%20Article-black?logo=medium)](https://medium.com/@shreymahek/visualizing-and-predicting-ocd-levels-and-music-liking-patterns-7948a8b8ff37)
 
-An algorithmic fairness audit of the BetaFace facial recognition API, revealing significant demographic biases in gender, race, and age detection across diverse image datasets.
+A statistical analysis examining the relationship between music listening patterns, favorite genres, and self-reported mental health conditions, specifically OCD levels, using hypothesis testing and polynomial regression with RMSE error of 2.75.
 
-## 🎯 Project Overview
+## Project Overview
 
-This project conducts a comprehensive audit of BetaFace's facial recognition API to identify and quantify algorithmic biases across demographic groups. The analysis examines **90 diverse images** using Tableau for visualization and statistical analysis, revealing systemic inaccuracies that have important implications for AI ethics and responsible technology deployment.
+This project analyzes survey data from October-November 2022 exploring how music preferences and listening habits correlate with mental health outcomes. Using advanced statistical methods including Bonferroni-corrected hypothesis testing and polynomial regression, the analysis identifies that EDM listeners show significantly lower OCD levels when listening frequently, while exploring the therapeutic potential of music across different genres.
 
-## 🚨 Key Findings
+### Key Findings
 
-### Critical Disparities Identified
+- Spotify dominates as the primary streaming service (majority of listeners)
+- EDM listeners who listen very frequently have the lowest OCD levels (0 out of 10)
+- Gospel vs. EDM shows the only statistically significant difference in OCD levels (p < 0.0004)
+- Downward trend: More frequent EDM listening correlates with lower OCD levels
+- Improvement through high hours: EDM listeners spending 17+ hours/day show mental health improvement
 
-1. **Gender Classification Accuracy**
-   - Significant misclassification rates across gender categories
-   - Performance disparities between demographic groups
+## Research Questions
 
-2. **Racial Bias Patterns**
-   - Uneven accuracy across different racial/ethnic groups
-   - Systematic errors in certain demographic categories
+1. Do different music genres correlate with different OCD levels?
+2. Does listening frequency affect mental health outcomes?
+3. Can we predict OCD levels based on music listening patterns?
+4. Which demographic and musical factors are most significant predictors?
 
-3. **Age Estimation Errors**
-   - Variable precision across age ranges
-   - Demographic-dependent error patterns
-
-## 📊 Methodology
-
-### Audit Framework
-
-#### 1. **Dataset Composition**
-- **Sample Size**: 90 diverse facial images
-- **Demographics Tested**: Multiple genders, races, and age groups
-- **Source**: Curated diverse image dataset for fairness testing
-- **Ground Truth**: Human-annotated demographic labels
-
-#### 2. **API Testing Protocol**
-- Systematic submission of images to BetaFace API
-- Collection of predictions for gender, race, and age
-- Documentation of confidence scores and classifications
-
-#### 3. **Analysis Approach**
-- **Accuracy Metrics**: Precision, recall, F1-scores by demographic group
-- **Disparity Measurement**: Between-group performance comparisons
-- **Statistical Testing**: Significance of observed differences
-- **Visualization**: Tableau dashboards for pattern identification
-
-### Evaluation Metrics
+## Repository Structure
 
 ```
-Accuracy Rate = (Correct Predictions) / (Total Predictions)
-Error Rate by Group = Group-specific misclassifications
-Disparity Ratio = (Best Group Accuracy) / (Worst Group Accuracy)
+OCD-Levels-Music-Preference-Pattern-Prediction/
+│
+├── OCD levels & music-liking patterns Prediction Project Code.R  # Complete analysis code
+├── Errorfunction.R                                               # Custom error function
+└── README.md                                                     # Project documentation
 ```
 
-## 📁 Repository Structure
+**Note**: The dataset used in this analysis is locally stored and not included in this repository.
 
-```
-facial-recognition-bias-audit/
-│
-├── BetaFace_API_Auditing_Report.pdf   # Comprehensive audit report
-├── README.md                          # Project documentation
-│
-├── data/
-│   ├── test_images/                   # Sample images (if shareable)
-│   ├── api_responses/                 # BetaFace API outputs
-│   └── ground_truth.csv               # Human-annotated labels
-│
-├── visualizations/
-│   ├── accuracy_by_demographic.png    # Key findings charts
-│   ├── confusion_matrices/            # Detailed error analysis
-│   └── tableau_dashboard.twbx         # Interactive dashboard
-│
-└── analysis/
-    ├── data_processing.py             # Data cleaning scripts
-    └── statistical_tests.R            # Significance testing
-```
-
-## 🔍 Detailed Findings
-
-### Gender Detection Biases
-
-**Observed Issues**:
-- Higher misclassification rates for non-binary presentations
-- Performance drops with certain lighting or angle conditions
-- Inconsistent handling of gender expression diversity
-
-### Racial/Ethnic Disparities
-
-**Key Patterns**:
-- Accuracy varies significantly across racial categories
-- Some groups experience systematically higher error rates
-- Lighting and image quality interact with demographic factors
-
-### Age Estimation Accuracy
-
-**Results**:
-- Mean Absolute Error varies by demographic group
-- Certain age ranges show pronounced over/under-estimation
-- Intersection of age with other demographics amplifies errors
-
-## 🛠️ Technologies Used
-
-- **Visualization**: Tableau Desktop
-- **API Testing**: BetaFace Facial Recognition API
-- **Data Analysis**: Excel, Python, R
-- **Documentation**: LaTeX, Markdown
-- **Version Control**: Git
-
-## 📈 Impact & Recommendations
-
-### Proposed Enhancements
-
-1. **Dataset Diversification**
-   - Expand training data to include underrepresented groups
-   - Ensure balanced representation across demographics
-
-2. **Fairness Metrics Integration**
-   - Implement demographic parity checks
-   - Monitor equalized odds across groups
-   - Track disparity ratios in production
-
-3. **Bias Mitigation Techniques**
-   - Apply pre-processing debiasing methods
-   - Implement fairness constraints during training
-   - Post-processing calibration for equity
-
-4. **Transparency Measures**
-   - Publish disaggregated accuracy reports
-   - Disclose known limitations by demographic
-   - Provide confidence intervals for predictions
-
-### Broader Implications
-
-- **Ethical AI Development**: Need for fairness audits in commercial APIs
-- **Regulatory Compliance**: Relevance to emerging AI governance frameworks
-- **Social Impact**: Consequences of biased systems in deployment
-- **Industry Standards**: Call for standardized fairness testing protocols
-
-## 🚀 Reproducing the Analysis
+## Getting Started
 
 ### Prerequisites
 
-```bash
-# Tableau Desktop (for visualizations)
-# Python 3.8+ (for data processing)
-# R 4.0+ (for statistical analysis)
+```r
+# Required R version
+R >= 4.0.0
+
+# Install required packages
+install.packages(c("ggplot2", "dplyr", "corrplot", "wesanderson"))
 ```
 
-### Setup
+### Running the Analysis
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Mkpz/facial-recognition-bias-audit.git
-cd facial-recognition-bias-audit
+git clone https://github.com/yourusername/OCD-Levels-Music-Preference-Pattern-Prediction.git
+cd OCD-Levels-Music-Preference-Pattern-Prediction
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt  # Python packages
+2. Obtain the dataset:
+   - The analysis uses Music & Mental Health Survey data (October-November 2022)
+   - Dataset is not publicly available in this repository
+   - Ensure you have access to the required dataset locally
+
+3. Configure data path:
+```r
+# Update the data path in the R file to point to your local dataset
+# Modify the file path in: OCD levels & music-liking patterns Prediction Project Code.R
 ```
 
-3. Access the report:
-```bash
-# Open BetaFace_API_Auditing_Report.pdf
+4. Load the error function:
+```r
+# Load custom error function for model evaluation
+source("Errorfunction.R")
 ```
 
-## 📊 Visualizations
+5. Run the analysis:
+```r
+source("OCD levels & music-liking patterns Prediction Project Code.R")
 
-### Tableau Dashboard Features
+# Or run sections individually:
+# - Data visualization (pie charts, bar plots, box plots)
+# - Hypothesis testing with Bonferroni correction
+# - Regression model building and evaluation
+```
 
-The Tableau analysis includes:
-- **Interactive Accuracy Heatmaps** by demographic intersection
-- **Confusion Matrices** for each classification task
-- **Error Distribution Charts** across groups
-- **Time-Series Analysis** (if applicable)
-- **Confidence Score Distributions** by demographic
+## Dataset Information
 
-## 🎓 Academic Context
+**Source**: Music & Mental Health Survey (Kaggle)  
+**Time Period**: October-November 2022  
+**Sample Size**: 500+ respondents  
 
-**Course**: Data Ethics / Algorithmic Fairness  
+**Key Variables**:
+- `Age`: Respondent age
+- `Primary.streaming.service`: Main music platform (Spotify, YouTube Music, etc.)
+- `Hours.per.day`: Music listening duration
+- `Fav.genre`: Favorite music genre (16 options)
+- `Frequency_[Genre]`: Listening frequency (Rarely, Sometimes, Very frequently)
+- `music.effects`: Self-reported mental health impact (Improve, Worsen, No effect)
+- `Exploratory`: Tendency to explore new music (Yes/No)
+- `Foreign.languages`: Listens to foreign language music (Yes/No)
+- `OCD`: Self-reported OCD level (0-10 scale)
+
+## Technologies & Methods
+
+### Programming & Statistical Tools
+- **Language**: R
+- **Key Packages**:
+  - `ggplot2` - Data visualization
+  - `dplyr` - Data manipulation
+  - `stats` - Hypothesis testing
+  - `corrplot` - Correlation analysis
+
+### Statistical Methods Implemented
+
+**1. Bonferroni Correction for Multiple Testing**
+
+Problem: Testing 120 pairwise genre comparisons (16 choose 2)  
+Solution: Adjusted significance level
+
+```
+α_adjusted = 0.05 / 120 = 4.16 × 10⁻⁴
+```
+
+**2. Z-Score Hypothesis Testing**
+
+**Hypothesis Test 1: EDM vs. Gospel**
+- H₀: No difference in average OCD levels between EDM and Gospel listeners
+- H₁: Average OCD levels differ between EDM and Gospel listeners
+- Result: p-value = 7.00 × 10⁻⁶ < 0.0004
+- Conclusion: Reject H₀ - Significant difference exists
+
+**Hypothesis Test 2: Latin vs. EDM**
+- H₀: No difference in average OCD levels between Latin and EDM listeners
+- H₁: Average OCD levels differ between Latin and EDM listeners
+- Result: p-value = 0.778 > 0.0004
+- Conclusion: Fail to reject H₀ - No significant difference
+
+Overall Finding: Only EDM vs. Gospel shows statistically significant difference among all 120 pairwise comparisons.
+
+## Analysis Results
+
+### Primary Streaming Services Distribution
+
+| Platform | Percentage | Notes |
+|----------|-----------|-------|
+| Spotify | ~60% | Dominant platform |
+| YouTube Music | ~25% | Second most popular |
+| Other platforms | ~15% | Apple Music, Pandora, etc. |
+
+Analysis Focus: Restricted to Spotify users for consistency
+
+### Age Demographics by Favorite Genre
+
+| Genre | Primary Age Range | Observations |
+|-------|------------------|--------------|
+| Latin | 20s | Concentrated younger audience |
+| EDM | 20s-30s | Young to middle-aged adults |
+| Gospel | 20s-50s | Broadest age distribution |
+
+Selected Genres: Latin, EDM, Gospel chosen for comparative analysis based on distinct age profiles
+
+### Music Effects on Mental Health by Genre
+
+**EDM Findings**:
+- High hours (17+/day): Mental health improvement reported
+- Low hours (<5/day): No effect on mental health
+- Pattern: More hours → Greater improvement
+
+**Gospel Findings**:
+- Moderate hours (~8/day): Mental health improvement reported
+- Efficiency: Fewer hours needed for positive effects
+
+**Latin Findings**:
+- High hours (~12/day): No effect on mental health reported
+- Pattern: Inconsistent improvement despite high engagement
+
+### OCD Level Distribution by EDM Frequency
+
+| OCD Level | Rare Listeners | Sometimes Listeners | Very Frequent Listeners |
+|-----------|---------------|---------------------|------------------------|
+| 0 (Lowest) | Low | Moderate | Highest count |
+| 1 | Low | Moderate | High |
+| 2 | Moderate | High | Moderate |
+| 3 | High | High | Low |
+| 4 | High | Moderate | Very Low |
+
+Clear Trend: As OCD levels increase, the number of very frequent EDM listeners decreases
+
+Statistical Significance: The inverse relationship between EDM listening frequency and OCD severity is statistically significant (Bonferroni-adjusted p < 0.0004)
+
+## Regression Models
+
+### Model 1: Polynomial Regression
+
+**Predictors**:
+- `Age`
+- `Fav.genre` (Favorite music genre)
+- `Hours.per.day` (Music listening hours)
+
+**Performance**:
+- RMSE: 2.879737
+- Interpretation: Good prediction given varying OCD patterns across genres
+
+### Model 2: Quadratic Polynomial Regression (Best Model)
+
+**Predictors**:
+- `Age`
+- `Fav.genre`
+- `Hours.per.day`
+- `music.effects` (Self-reported mental health impact)
+- `Exploratory` (Listens to new music frequently)
+- `Foreign.languages` (Listens to foreign language music)
+- `Primary.streaming.service`
+
+**Performance**:
+- RMSE: 2.749560 (Best Performance)
+- Improvement: 4.5% reduction in prediction error vs. Model 1
+
+**Model Comparison**:
+- Quadratic polynomial > Polynomial > Exponential > Logarithmic
+- Additional predictors (music effects, exploratory tendencies) improved accuracy
+- Quadratic terms captured non-linear relationships
+
+## Key Insights
+
+### 1. EDM's Therapeutic Potential
+
+Mechanism Hypothesis:
+- High engagement (17+ hours/day) suggests deep emotional connection
+- Rhythm and tempo may provide cognitive stimulation
+- Consistent exposure allows cumulative mental health benefits
+- Very frequent listeners show measurable OCD reduction
+
+### 2. Gospel's Efficiency
+
+Characteristics:
+- Moderate hours (8/day) sufficient for improvement
+- Broader age appeal (20s-50s) suggests universal themes
+- Spiritual/emotional content may provide rapid mental health benefits
+
+### 3. Genre-Specific Patterns
+
+Why Latin Shows No Effect:
+- Cultural factors not captured in dataset
+- Potential confounding variables (location, heritage)
+- Different mechanisms of music appreciation
+
+### 4. Listening Patterns Matter
+
+Frequency > Duration for certain genres:
+- Very frequent listening (daily habit) more impactful than total hours alone
+- Consistency may be key therapeutic factor
+- Engagement type (active vs. passive listening) not measured
+
+## Data Visualizations Created
+
+### 1. Pie Chart
+- Purpose: Distribution of primary streaming services
+- Finding: Spotify dominates the market
+
+### 2. Box Plot
+- Purpose: Age distribution across 16 favorite genres
+- Finding: Distinct age profiles (Latin: 20s, EDM: 20s-30s, Gospel: 20s-50s)
+
+### 3. Double Bar Plot
+- Purpose: Music effects on mental health by genre
+- Finding: EDM high-hour listeners show improvement; Gospel moderate-hour listeners show improvement
+
+### 4. Stacked Bar Plot
+- Purpose: OCD levels vs. EDM listening frequency
+- Finding: Very frequent EDM listeners have lowest OCD levels (inverse relationship)
+
+## Limitations & Future Work
+
+### Current Limitations
+
+1. Incomplete 2022 Data: Only October-November available
+2. Missing Location Data: Cannot analyze cultural/regional factors
+3. Cross-Sectional Design: Cannot establish causation
+4. Self-Reported Measures: Potential bias in OCD assessment
+5. Sample Demographics: Limited diversity in age/background
+
+### Proposed Improvements
+
+1. Longitudinal Study: Track participants over time to establish causality
+2. Location Variables: Add country/region for cultural analysis
+3. Clinical Validation: Use standardized OCD diagnostic tools
+4. Expanded Timeframe: Compare pre-COVID (2019) vs. current (2022) trends
+5. Qualitative Data: Interviews to understand mechanisms
+6. Listening Context: Active vs. passive listening, social vs. solo
+
+### Research Extensions
+
+- Music therapy protocols based on genre-specific findings
+- Dose-response curves for different genres
+- Demographic subgroup analysis (age, gender, location)
+- Other mental health conditions (anxiety, depression)
+- Physiological measures (heart rate, cortisol levels)
+
+## Academic Context
+
+**Course**: Data Science / Statistical Analysis  
 **Institution**: Rutgers University  
-**Completion Date**: May 2024  
-**Format**: Written report with visual analysis
+**Completion Date**: 2022  
+**Medium Publication**: [Read the full article](https://medium.com/@shreymahek/visualizing-and-predicting-ocd-levels-and-music-liking-patterns-7948a8b8ff37)
 
-## 📚 Related Work & References
+## Read the Full Story
 
-This audit builds on established fairness research:
-- Gender Shades study (Buolamwini & Gebru, 2018)
-- Facial recognition bias literature
-- Algorithmic fairness frameworks (Equality of Opportunity, etc.)
+For a detailed narrative of this analysis with additional context and insights:
 
-## 🤝 Skills Demonstrated
+[View the Medium article](https://medium.com/@shreymahek/visualizing-and-predicting-ocd-levels-and-music-liking-patterns-7948a8b8ff37)
 
-- **Algorithmic Auditing**: Systematic bias detection methodology
-- **Data Visualization**: Tableau dashboard creation
-- **Statistical Analysis**: Disparity measurement and testing
-- **Technical Writing**: Comprehensive audit report
-- **AI Ethics**: Understanding of fairness principles
-- **Critical Analysis**: Evaluation of commercial AI systems
+The Medium post includes:
+- Expanded background on music therapy
+- Additional visualizations and interpretations
+- Personal reflections on the findings
+- Broader implications for mental health awareness
 
-## ⚖️ Ethical Considerations
+## Music Therapy Implications
 
-This project was conducted:
-- With publicly available or licensed images
-- For educational and research purposes
-- Following ethical guidelines for fairness auditing
-- Without intent to defame the API provider
-- To promote responsible AI development
+**For Practitioners**:
+- Consider genre preferences when designing interventions
+- High-frequency listening (daily habit formation) may be therapeutic
+- EDM's rhythmic properties may specifically benefit OCD management
+- Gospel's spiritual elements provide efficient mental health benefits
 
-## 🔮 Future Work
-
-Potential extensions of this analysis:
-- **Longitudinal Study**: Track API improvements over time
-- **Expanded Scope**: Test additional facial recognition APIs
-- **Intersectionality**: Deeper analysis of demographic intersections
-- **Real-World Impact**: Case studies of deployment consequences
-- **Mitigation Testing**: Evaluate bias reduction techniques
-
-## 📄 Citation
-
-If referencing this audit:
-
-```
-Patel, M. (2024). BetaFace API Algorithmic Fairness Audit: 
-Revealing Demographic Disparities in Facial Recognition. 
-Rutgers University Algorithmic Fairness Project.
-```
-
-## 📧 Contact
-
-**Mahek Patel**  
-- GitHub: [@Mkpz](https://github.com/Mkpz)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
-## 📜 License
-
-This project is available for educational, research, and non-commercial use. The audit findings are presented for transparency and AI accountability purposes.
+**For Listeners**:
+- Explore genres that resonate emotionally
+- Establish consistent listening routines
+- Consider very frequent listening for genres you love
+- Music streaming accessibility enables self-directed therapy
 
 ---
 
-## 🌟 Key Takeaway
-
-> "Algorithmic fairness is not a technical problem to be solved once, but an ongoing commitment to equity in AI systems. This audit demonstrates the critical importance of rigorous testing across diverse populations."
-
----
-
-**Disclaimer**: This is an independent academic audit conducted for educational purposes. Findings represent the system's performance at the time of testing and are intended to contribute to the broader conversation about AI fairness and accountability.
+**Note**: This analysis represents academic coursework demonstrating proficiency in statistical hypothesis testing, regression modeling, and research communication through multiple media (code, visualizations, written article).
